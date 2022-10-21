@@ -36,7 +36,7 @@ export default function header() {
                 <div className="flex items-center h-20 w-full">
                     <div className="flex items items-center mx-[20px] justify-between w-full md:mx-20">
                         <div className="flex justify-center items-center flex-shrink-0">
-                            <div className="h-[33px] w-[100px] relative">
+                            <div className="h-[33px] w-[120px] relative">
                                 <Image src="/assets/images/React.png" alt="logo" layout="fill" />
                             </div>
                         </div>

@@ -10,7 +10,7 @@ export default function heroSection() {
 
                 <div className="after:content[''] after:absolute after:top-[80px] after:right-[30px] after:h-[430px] after:w-[340px] after:bg-[url('/assets/images/p2.png')] after:block">
 
-                    <div className="z-[10] relative before:content[''] before:absolute before:top-[-10px] before:left-[150px] before:h-[50px] before:w-[50px] before:bg-[url('/assets/images/p1.png')] before:block">
+                    <div className="z-[10] relative before:content[''] before:absolute before:top-[-10px] before:left-[165px] before:h-[50px] before:w-[50px] before:bg-[url('/assets/images/p1.png')] before:block">
 
                         <h1 className="text-[48px] font-extrabold text-[#000] text-right mr-[80px] relative">React</h1>
 
@@ -34,7 +34,7 @@ export default function heroSection() {
 
                 <div className="mt-[20px]">
                     <div className="flex relative">
-                        <div className="ml-[30px] z-[60] before:content[''] before:absolute before:top-[80px] before:right-[170px] before:h-[80px] before:w-[100px] before:bg-[url('/assets/images/p7.png')] before:block before:bg-no-repeat before:z-10">
+                        <div className="ml-[50px] z-[60] before:content[''] before:absolute before:top-[80px] before:right-[170px] before:h-[80px] before:w-[100px] before:bg-[url('/assets/images/p7.png')] before:block before:bg-no-repeat before:z-10">
                             <div className="h-[200px] w-[157px] block m-auto mt-[20px] relative">
                                 <Image src="/assets/images/p6.png" alt="logo" layout="fill" />
                             </div>
