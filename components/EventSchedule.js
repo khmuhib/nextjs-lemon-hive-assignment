@@ -28,7 +28,7 @@ export default function EventSchedule() {
                             <th>Sun</th>
                         </tr>
                         <tr>
-                            <th>9.00</th>
+                            <th className='p-10'>9.00</th>
                             <td>
                                 <p className='my-4 text-[16px] font-bold'>02-08-2022</p>
                                 <Link href="/conferenceInfo">
@@ -53,7 +53,7 @@ export default function EventSchedule() {
                             </td>
                         </tr>
                         <tr>
-                            <th>10.00</th>
+                            <th className='p-10'>10.00</th>
                             <td></td>
                             <td></td>
                             <td>
@@ -78,7 +78,7 @@ export default function EventSchedule() {
                             <td></td>
                         </tr>
                         <tr>
-                            <th>11.00</th>
+                            <th className='p-10'>11.00</th>
                             <td></td>
                             <td>
                                 <p className='my-4 text-[16px] font-bold'>02-08-2022</p>
