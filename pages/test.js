@@ -17,23 +17,7 @@ export default function test() {
         {
             name: "Three",
             id: 3
-        },
-        {
-            name: "Three",
-            id: 3
-        },
-        {
-            name: "Three",
-            id: 3
-        },
-        {
-            name: "Three",
-            id: 3
-        },
-        {
-            name: "Three",
-            id: 3
-        },
+        }
     ]
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
