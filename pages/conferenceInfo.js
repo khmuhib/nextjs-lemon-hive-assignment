@@ -122,7 +122,7 @@ export default function conferenceInfo() {
                                 <div className="flex md:items-center md:gap-x-10 gap-x-5">
                                     <div className="">
                                         <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
-                                            <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
+                                            <Image src="/assets/images/img03.png" alt="logo" layout="fill" />
                                         </div>
                                     </div>
                                     <div className="">
@@ -142,7 +142,7 @@ export default function conferenceInfo() {
                                 <div className="flex md:items-center md:gap-x-10 gap-x-5">
                                     <div className="">
                                         <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
-                                            <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
+                                            <Image src="/assets/images/img02.png" alt="logo" layout="fill" />
                                         </div>
                                     </div>
                                     <div className="">
@@ -179,7 +179,7 @@ export default function conferenceInfo() {
                                             <h2 className={`text-[22px] ${selected === i ? 'text-white' : 'text-[#128041]'}`}>Name</h2> */}
                                             <div className={`md:w-[40%] w-full`}>
                                                 <div className={``}>
-                                                    <div className="border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-5 mx-[20px] md:mx-[0px]">
+                                                    <div className={`border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-5 mx-[20px] md:mx-[0px] ${selected === i ? 'bg-[#FFC93E]' : 'bg-[#fff]'}`}>
                                                         <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
                                                         <div className="">{ item.name}</div>
                                                     </div>
@@ -214,7 +214,7 @@ export default function conferenceInfo() {
                                                     <div className="flex md:items-center md:gap-x-10 gap-x-5">
                                                         <div className="">
                                                             <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
-                                                                <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
+                                                                <Image src="/assets/images/img03.png" alt="logo" layout="fill" />
                                                             </div>
                                                         </div>
                                                         <div className="">
@@ -234,7 +234,7 @@ export default function conferenceInfo() {
                                                     <div className="flex md:items-center md:gap-x-10 gap-x-5">
                                                         <div className="">
                                                             <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
-                                                                <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
+                                                                <Image src="/assets/images/img02.png" alt="logo" layout="fill" />
                                                             </div>
                                                         </div>
                                                         <div className="">
