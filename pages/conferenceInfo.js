@@ -5,11 +5,43 @@ import Styles from './../styles/Conference.module.css'
 import { BiSortAlt2 } from "react-icons/bi";
 import Image from 'next/image';
 import { useState } from 'react'
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { resetServerContext } from "react-beautiful-dnd"
 
 export default function conferenceInfo() {
+    const itemData = [
+        {
+            name: "Organizer",
+            id: 1
+        },
+        {
+            name: "Speakers",
+            id: 2
+        },
+        {
+            name: "Location",
+            id: 3
+        },
+        {
+            name: "Schedule",
+            id: 4
+        },
+        {
+            name: "Sponsors",
+            id: 5
+        },
+    ]
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [show, setShow] = useState(true)
+    const [data, setData] = useState(itemData)
+
+    const handleDragEnd = (result) => {
+        if (!result.destination) return;
+        const items = Array.from(data);
+        const [reorderData] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderData);
+        setData(items);
+    }
 
 
     return (
@@ -17,37 +49,39 @@ export default function conferenceInfo() {
             <Head>
                 <title>Conference info</title>
             </Head>
-            
+
             <div className="container mx-auto py-10 overflow-auto">
                 <div className="py-10 mx-5">
                     <h2 className='text-[48px] font-bold'>Conference info</h2>
                     <p className='text-[20px] text-gray-500'>Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum.</p>
                 </div>
                 <div className="flex gap-x-10">
-                    <div className={`w-[40%]`}>
-                        <div className={``}>
-                            <div onClick={() => setShow(!show)} className="border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-10">
-                                <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
-                                <div className="">Organizer</div>
-                            </div>
-                            <div className={`border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-10`}>
-                                <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
-                                <div className="">Speakers</div>
-                            </div>
-                            <div className={`border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-10`}>
-                                <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
-                                <div className="">Location</div>
-                            </div>
-                            <div className={`border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-10`}>
-                                <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
-                                <div className="">Schedule</div>
-                            </div>
-                            <div className={`border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-10`}>
-                                <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
-                                <div className="">Sponsors</div>
-                            </div>
-                        </div>
-                    </div>
+                    <DragDropContext onDragEnd={handleDragEnd}>
+                        <Droppable droppableId='data'>
+                            {(provided) => (
+                                <div className={`w-[40%]`} {...provided.droppableProps} ref={provided.innerRef}>
+                                    <div className={``}>
+                                        {
+                                            data && data.map((item, index) => {
+                                                return (
+                                                    <Draggable key={item.id} draggableId={item.id.toString()} index={index}>
+                                                        {(provided) => (
+                                                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-10">
+                                                                <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
+                                                                <div className="">{item.name}</div>
+                                                            </div>
+
+                                                        )}
+                                                    </Draggable>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                </div>
+
+                            )}
+                        </Droppable>
+                    </DragDropContext>
                     <div className="">
                         <div className="bg-[#FBFBFB] p-5 mt-10 rounded-md">
                             <div className="bg-white py-[30px] px-[30px] my-5">
