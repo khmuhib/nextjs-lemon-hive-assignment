@@ -1,0 +1,28 @@
+.table_main {
+    text-align: center;
+    display: table;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.table_main table {
+    border-radius: 12px;
+}
+
+.table_main table {
+    border-spacing: 0;
+}
+
+.table_main table tr td {
+    width: 200px;
+    border: 1px solid #f6f6f6;
+    height: 100px;
+    text-align: center;
+}
+
+.table_main table tr th {
+    width: 200px;
+    border: 1px solid #f6f6f6;
+    height: 100px;
+}

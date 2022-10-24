@@ -31,7 +31,8 @@ export default function header() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [open, setOpen] = useState(false)
     return (
-        <nav className='w-full z-10'>
+        <div className="w-[70%] m-auto">
+            <nav className='w-full z-10'>
             <div className="w-full">
                 <div className="flex items-center h-20 w-full">
                     <div className="flex items items-center mx-[20px] justify-between w-full md:mx-20">
@@ -59,7 +60,7 @@ export default function header() {
                             </a>
                         </div>
                         <div className="flex justify-center items-center flex-shrink-0">
-                            <div className="group z-[55] relative w-6 h-6 cursor-pointer flex-col justify-between items-center flex" onClick={() => {
+                            <div className="group z-[1000] relative w-6 h-6 cursor-pointer flex-col justify-between items-center flex" onClick={() => {
                                 setOpen(!open)
                             }}>
                                 {/* hamburger button */}
@@ -74,5 +75,6 @@ export default function header() {
             <MobileNav open={open} setOpen={setOpen} />
 
         </nav>
+        </div>
     )
 }

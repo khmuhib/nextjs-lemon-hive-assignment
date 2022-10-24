@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import HeroSection from '../components/HeroSection'
+import EventSchedule from '../components/EventSchedule'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeroSection></HeroSection>
+      <EventSchedule></EventSchedule>
     </>
   )
 }
