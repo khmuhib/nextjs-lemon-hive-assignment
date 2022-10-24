@@ -43,6 +43,15 @@ export default function conferenceInfo() {
         setData(items);
     }
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [selected, setSelected] = useState(null)
+    const toggle = (i) => {
+        if (selected == i) {
+            return setSelected(null)
+        }
+        setSelected(i)
+    }
+
 
     return (
         <>
@@ -50,26 +59,31 @@ export default function conferenceInfo() {
                 <title>Conference info</title>
             </Head>
 
+            
             <div className="container mx-auto py-10 overflow-auto">
                 <div className="py-10 mx-5">
-                    <h2 className='text-[48px] font-bold'>Conference info</h2>
-                    <p className='text-[20px] text-gray-500'>Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum.</p>
+                    <h2 className='md:text-[48px] text-[24px] font-bold'>Conference info</h2>
+                    <p className='md:text-[20px] text-[16px] text-gray-500'>Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum.</p>
                 </div>
-                <div className="flex gap-x-10">
+
+                {/* this is for desktop */}
+
+                <div className="md:flex md:gap-x-10 hidden">
                     <DragDropContext onDragEnd={handleDragEnd}>
                         <Droppable droppableId='data'>
                             {(provided) => (
-                                <div className={`w-[40%]`} {...provided.droppableProps} ref={provided.innerRef}>
+                                <div className={`md:w-[40%] w-full`} {...provided.droppableProps} ref={provided.innerRef}>
                                     <div className={``}>
                                         {
                                             data && data.map((item, index) => {
                                                 return (
                                                     <Draggable key={item.id} draggableId={item.id.toString()} index={index}>
                                                         {(provided) => (
-                                                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-10">
+                                                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-10 mx-[20px] md:mx-[0px]">
                                                                 <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
                                                                 <div className="">{item.name}</div>
                                                             </div>
+
 
                                                         )}
                                                     </Draggable>
@@ -83,63 +97,63 @@ export default function conferenceInfo() {
                         </Droppable>
                     </DragDropContext>
                     <div className="">
-                        <div className="bg-[#FBFBFB] p-5 mt-10 rounded-md">
+                        <div className="bg-[#FBFBFB] p-5 mt-10 rounded-md mx-[20px] hidden sm:block">
                             <div className="bg-white py-[30px] px-[30px] my-5">
-                                <div className="flex items-center gap-x-10">
+                                <div className="flex md:items-center md:gap-x-10 gap-x-5">
                                     <div className="">
-                                        <div className="h-[140px] w-[140px] relative">
+                                        <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
                                             <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
                                         </div>
                                     </div>
                                     <div className="">
-                                        <div className="flex justify-between mb-[10px]">
+                                        <div className="md:flex md:justify-between mb-[10px]">
                                             <div className="">
-                                                <h2 className='text-[20px] text-[#0A142F] font-bold'>John Blain Doe</h2>
+                                                <h2 className='md:text-[20px] text-[16px] text-[#0A142F] font-bold'>John Blain Doe</h2>
                                             </div>
-                                            <div className="text-[16px] text-gray-400">Company Name</div>
+                                            <div className="md:text-[16px] text-[12px] text-[#0045FF] md:text-gray-400">Company Name</div>
                                         </div>
                                         <div className="">
-                                            <p className='text-[16px] text-[#0A142F]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et condimentum lectus in vel pellentesque arcu non odio. Ut dis eu dolor ac tellus vitae ut.</p>
+                                            <p className='md:text-[16px] text-[12px] text-[#0A142F]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et condimentum lectus in vel pellentesque arcu non odio. Ut dis eu dolor ac tellus vitae ut.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="bg-white py-[30px] px-[30px] my-5">
-                                <div className="flex items-center gap-x-10">
+                                <div className="flex md:items-center md:gap-x-10 gap-x-5">
                                     <div className="">
-                                        <div className="h-[140px] w-[140px] relative">
-                                            <Image src="/assets/images/img03.png" alt="logo" layout="fill" />
+                                        <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
+                                            <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
                                         </div>
                                     </div>
                                     <div className="">
-                                        <div className="flex justify-between mb-[10px]">
+                                        <div className="md:flex md:justify-between mb-[10px]">
                                             <div className="">
-                                                <h2 className='text-[20px] text-[#0A142F] font-bold'>John Blain Doe</h2>
+                                                <h2 className='md:text-[20px] text-[16px] text-[#0A142F] font-bold'>John Blain Doe</h2>
                                             </div>
-                                            <div className="text-[16px] text-gray-400">Company Name</div>
+                                            <div className="md:text-[16px] text-[12px] text-[#0045FF] md:text-gray-400">Company Name</div>
                                         </div>
                                         <div className="">
-                                            <p className='text-[16px] text-[#0A142F]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et condimentum lectus in vel pellentesque arcu non odio. Ut dis eu dolor ac tellus vitae ut.</p>
+                                            <p className='md:text-[16px] text-[12px] text-[#0A142F]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et condimentum lectus in vel pellentesque arcu non odio. Ut dis eu dolor ac tellus vitae ut.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="bg-white py-[30px] px-[30px] my-5">
-                                <div className="flex items-center gap-x-10">
+                                <div className="flex md:items-center md:gap-x-10 gap-x-5">
                                     <div className="">
-                                        <div className="h-[140px] w-[140px] relative">
-                                            <Image src="/assets/images/img02.png" alt="logo" layout="fill" />
+                                        <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
+                                            <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
                                         </div>
                                     </div>
                                     <div className="">
-                                        <div className="flex justify-between mb-[10px]">
+                                        <div className="md:flex md:justify-between mb-[10px]">
                                             <div className="">
-                                                <h2 className='text-[20px] text-[#0A142F] font-bold'>John Blain Doe</h2>
+                                                <h2 className='md:text-[20px] text-[16px] text-[#0A142F] font-bold'>John Blain Doe</h2>
                                             </div>
-                                            <div className="text-[16px] text-gray-400">Company Name</div>
+                                            <div className="md:text-[16px] text-[12px] text-[#0045FF] md:text-gray-400">Company Name</div>
                                         </div>
                                         <div className="">
-                                            <p className='text-[16px] text-[#0A142F]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et condimentum lectus in vel pellentesque arcu non odio. Ut dis eu dolor ac tellus vitae ut.</p>
+                                            <p className='md:text-[16px] text-[12px] text-[#0A142F]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et condimentum lectus in vel pellentesque arcu non odio. Ut dis eu dolor ac tellus vitae ut.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -147,7 +161,107 @@ export default function conferenceInfo() {
                         </div>
                     </div>
                 </div>
+
+
+
+                {/* for mobile */}
+
+                <div className="row bg-transparent md:hidden block">
+                    <div className="container mx-auto">
+                        <div className="">
+                            {
+                                itemData.map((item, i) => (
+                                    <div className={` rounded-md ${selected === i ? 'bg-transparent' : 'bg-transparent'}`} key={i}>
+                                        <div className={` flex cursor-pointer items-center rounded-t-md `} onClick={() => toggle(i)}>
+                                            {/* <div className={`h-[30px] w-[30px] rounded-full border ${selected === i ? 'border-white' : 'border-[#128041]'} ml-5`}>
+                                                <p className={`text-center font-bold ${selected === i ? 'text-white' : 'text-[#128041]'}`}>{selected === i ? '-' : '+'}</p>
+                                            </div>
+                                            <h2 className={`text-[22px] ${selected === i ? 'text-white' : 'text-[#128041]'}`}>Name</h2> */}
+                                            <div className={`md:w-[40%] w-full`}>
+                                                <div className={``}>
+                                                    <div className="border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-5 mx-[20px] md:mx-[0px]">
+                                                        <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
+                                                        <div className="">{ item.name}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div className={`${selected === i ? 'max-h-full' : 'max-h-0'} overflow-hidden transition-all`}>
+
+                                            <div className="bg-[#FBFBFB] p-5 rounded-md mx-[20px]">
+                                                <div className="bg-white py-[30px] px-[30px]">
+                                                    <div className="flex md:items-center md:gap-x-10 gap-x-5">
+                                                        <div className="">
+                                                            <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
+                                                                <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
+                                                            </div>
+                                                        </div>
+                                                        <div className="">
+                                                            <div className="md:flex md:justify-between mb-[10px]">
+                                                                <div className="">
+                                                                    <h2 className='md:text-[20px] text-[16px] text-[#0A142F] font-bold'>John Blain Doe</h2>
+                                                                </div>
+                                                                <div className="md:text-[16px] text-[12px] text-[#0045FF] md:text-gray-400">Company Name</div>
+                                                            </div>
+                                                            <div className="">
+                                                                <p className='md:text-[16px] text-[12px] text-[#0A142F]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et condimentum lectus in vel pellentesque arcu non odio. Ut dis eu dolor ac tellus vitae ut.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="bg-white py-[30px] px-[30px] my-5">
+                                                    <div className="flex md:items-center md:gap-x-10 gap-x-5">
+                                                        <div className="">
+                                                            <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
+                                                                <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
+                                                            </div>
+                                                        </div>
+                                                        <div className="">
+                                                            <div className="md:flex md:justify-between mb-[10px]">
+                                                                <div className="">
+                                                                    <h2 className='md:text-[20px] text-[16px] text-[#0A142F] font-bold'>John Blain Doe</h2>
+                                                                </div>
+                                                                <div className="md:text-[16px] text-[12px] text-[#0045FF] md:text-gray-400">Company Name</div>
+                                                            </div>
+                                                            <div className="">
+                                                                <p className='md:text-[16px] text-[12px] text-[#0A142F]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et condimentum lectus in vel pellentesque arcu non odio. Ut dis eu dolor ac tellus vitae ut.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="bg-white py-[30px] px-[30px] my-5">
+                                                    <div className="flex md:items-center md:gap-x-10 gap-x-5">
+                                                        <div className="">
+                                                            <div className="md:h-[140px] md:w-[140px] h-[88px] w-[88px] relative">
+                                                                <Image src="/assets/images/img1.png" alt="logo" layout="fill" />
+                                                            </div>
+                                                        </div>
+                                                        <div className="">
+                                                            <div className="md:flex md:justify-between mb-[10px]">
+                                                                <div className="">
+                                                                    <h2 className='md:text-[20px] text-[16px] text-[#0A142F] font-bold'>John Blain Doe</h2>
+                                                                </div>
+                                                                <div className="md:text-[16px] text-[12px] text-[#0045FF] md:text-gray-400">Company Name</div>
+                                                            </div>
+                                                            <div className="">
+                                                                <p className='md:text-[16px] text-[12px] text-[#0A142F]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et condimentum lectus in vel pellentesque arcu non odio. Ut dis eu dolor ac tellus vitae ut.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            {/* This is mobile */}
         </>
     )
 }
