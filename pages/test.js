@@ -23,10 +23,18 @@ export default function test() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [data, setData] = useState(itemData);
 
+    const handleDragEnd = (result) => {
+        if (!result.destination) return;
+        const items = Array.from(data);
+        const [reorderData] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderData);
+        setData(items);
+    }
+
     return (
         <>
             <div className="container m-auto bg-lime-200 h-screen">
-                <DragDropContext>
+                <DragDropContext onDragEnd={handleDragEnd}>
                     <Droppable droppableId='data'>
                         {(provided) => (
                             <div {...provided.droppableProps} ref={provided.innerRef} className="bg-gray-400 py-[20px]">
@@ -44,6 +52,7 @@ export default function test() {
                                         )
                                     })
                                 }
+                                { provided.placeholder}
                             </div>
                         )}
 
