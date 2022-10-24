@@ -1,10 +1,16 @@
 import Link from 'next/link'
 import React from 'react'
 import Styles from '../styles/EventSchedule.module.css'
+import Head from 'next/head'
 
 export default function EventSchedule() {
     return (
         <>
+            
+            <Head>
+                <title>React</title>
+                {/* <script src='/sc.js'></script> */}
+            </Head>
             <div className="container mx-auto py-5 overflow-auto">
                 <div className="py-10 mx-5">
                     <h2 className='text-[48px] font-bold'>Event Schedule</h2>
@@ -22,7 +28,7 @@ export default function EventSchedule() {
                             <th>Sun</th>
                         </tr>
                         <tr>
-                            <td>9.00</td>
+                            <th>9.00</th>
                             <td>
                                 <p className='my-4 text-[16px] font-bold'>02-08-2022</p>
                                 <Link href="/conferenceInfo">
@@ -47,7 +53,7 @@ export default function EventSchedule() {
                             </td>
                         </tr>
                         <tr>
-                            <td>10.00</td>
+                            <th>10.00</th>
                             <td></td>
                             <td></td>
                             <td>
@@ -72,7 +78,7 @@ export default function EventSchedule() {
                             <td></td>
                         </tr>
                         <tr>
-                            <td>11.00</td>
+                            <th>11.00</th>
                             <td></td>
                             <td>
                                 <p className='my-4 text-[16px] font-bold'>02-08-2022</p>
