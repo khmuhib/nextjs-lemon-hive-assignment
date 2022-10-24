@@ -179,7 +179,7 @@ export default function conferenceInfo() {
                                             <h2 className={`text-[22px] ${selected === i ? 'text-white' : 'text-[#128041]'}`}>Name</h2> */}
                                             <div className={`md:w-[40%] w-full`}>
                                                 <div className={``}>
-                                                    <div className={`border border-[rgba(217, 217, 217, 0.5)] py-[5px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-5 mx-[20px] md:mx-[0px] ${selected === i ? 'bg-[#FFC93E]' : 'bg-[#fff]'}`}>
+                                                    <div className={`border border-[rgba(217, 217, 217, 0.5)] py-[0px] text-[20px] text-[#0A142F] font-bold hover:bg-[#FFC93E] hover:border-transparent hover:shadow-xl rounded-md flex items-center my-2 mx-[20px] md:mx-[0px] ${selected === i ? 'bg-[#FFC93E]' : 'bg-[#fff]'}`}>
                                                         <div className="bg-[#FFFCF6] p-2 rounded-md m-3"><BiSortAlt2 size={42} color="#FFC93E"></BiSortAlt2></div>
                                                         <div className="">{ item.name}</div>
                                                     </div>
