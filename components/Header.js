@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function MobileNav({ open, setOpen }) {
     return (
@@ -33,48 +34,50 @@ export default function header() {
     return (
         <div className="w-[70%] m-auto">
             <nav className='w-full z-10'>
-            <div className="w-full">
-                <div className="flex items-center h-20 w-full">
-                    <div className="flex items items-center justify-between w-full md:mx-20">
-                        <div className="flex justify-center items-center flex-shrink-0">
-                            <div className="h-[33px] w-[120px] relative">
-                                <Image src="/assets/images/React.png" alt="logo" layout="fill" />
+                <div className="w-full">
+                    <div className="flex items-center h-20 w-full">
+                        <div className="flex items items-center justify-between w-full md:mx-20">
+                            <div className="flex justify-center items-center flex-shrink-0">
+                                <Link href="/">
+                                    <div className="h-[33px] w-[120px] relative">
+                                        <Image src="/assets/images/React.png" alt="logo" layout="fill" />
+                                    </div>
+                                </Link>
                             </div>
-                        </div>
-                        <div className="justify-center items-center flex-shrink-0 hidden sm:block">
+                            <div className="justify-center items-center flex-shrink-0 hidden sm:block">
 
-                            <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
-                                About us
-                            </a>
-                            <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
-                                What We do
-                            </a>
-                            <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
-                                Our work
-                            </a>
-                            <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
-                                Blog
-                            </a>
-                            <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
-                                Say hi
-                            </a>
-                        </div>
-                        <div className="flex justify-center items-center flex-shrink-0">
-                            <div className="group z-[1000] relative w-6 h-6 cursor-pointer flex-col justify-between items-center flex" onClick={() => {
-                                setOpen(!open)
-                            }}>
-                                {/* hamburger button */}
-                                <span className={`h-[3px] w-full bg-black rounded-lg group-hover:text-red-500 cursor-pointer transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-2.5" : ""}`} />
-                                <span className={`h-[3px] w-full bg-black rounded-lg group-hover:text-red-500 cursor-pointer transition-all duration-300 ease-in-out ${open ? "w-0" : "w-full"}`} />
-                                <span className={`h-[3px] w-full bg-black rounded-lg group-hover:text-red-500 cursor-pointer transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-2.5" : ""}`} />
+                                <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
+                                    About us
+                                </a>
+                                <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
+                                    What We do
+                                </a>
+                                <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
+                                    Our work
+                                </a>
+                                <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
+                                    Blog
+                                </a>
+                                <a className="text-[18px] font-[600] text-[#0A142F] px-[25px]" href="#" >
+                                    Say hi
+                                </a>
+                            </div>
+                            <div className="flex justify-center items-center flex-shrink-0">
+                                <div className="group z-[1000] relative w-6 h-6 cursor-pointer flex-col justify-between items-center flex" onClick={() => {
+                                    setOpen(!open)
+                                }}>
+                                    {/* hamburger button */}
+                                    <span className={`h-[3px] w-full bg-black rounded-lg group-hover:text-red-500 cursor-pointer transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-2.5" : ""}`} />
+                                    <span className={`h-[3px] w-full bg-black rounded-lg group-hover:text-red-500 cursor-pointer transition-all duration-300 ease-in-out ${open ? "w-0" : "w-full"}`} />
+                                    <span className={`h-[3px] w-full bg-black rounded-lg group-hover:text-red-500 cursor-pointer transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-2.5" : ""}`} />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <MobileNav open={open} setOpen={setOpen} />
+                <MobileNav open={open} setOpen={setOpen} />
 
-        </nav>
+            </nav>
         </div>
     )
 }
