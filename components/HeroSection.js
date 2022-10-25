@@ -53,8 +53,8 @@ export default function heroSection() {
                 <div className="flex">
                     <div className="w-[60%]">
                         <div className="table float-right clear-both relative before:content[''] before:absolute before:top-[0px] before:right-[360px] before:h-[50px] before:w-[50px] before:bg-[url('/assets/images/p1.png')] before:block after:content[''] after:absolute after:top-[0px] after:left-[500px] after:h-[832px] after:w-[940px] after:bg-[url('/assets/images/p2d.png')] after:block">
-                            <h1 className='text-right text-[120px] font-bold leading-[169px] relative z-50 mr-[20px]'>React</h1>
-                            <h1 className='text-right text-[120px] font-bold leading-[169px] relative z-50 mr-[20px]'>Conference</h1>
+                            <h1 className='text-right text-[120px] font-bold leading-[169px] relative z-50 md:mr-[20px]'>React</h1>
+                            <h1 className='text-right text-[120px] font-bold leading-[169px] relative z-50 md:mr-[20px]'>Conference</h1>
                         </div>
                         <div className="flex clear-both gap-x-[50px]">
                             <div className="w-[60%] relative after:content[''] after:absolute after:bottom-[-50px] after:right-[-100px] after:h-[200px] after:w-[200px] after:bg-[url('/assets/images/p8d.png')] after:block after:bg-no-repeat">
