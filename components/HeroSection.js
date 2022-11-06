@@ -53,11 +53,11 @@ export default function heroSection() {
                 <div className="flex">
                     <div className="w-[60%]">
                         <div className="table float-right clear-both relative before:content[''] before:absolute before:top-[0px] before:right-[360px] before:h-[50px] before:w-[50px] before:bg-[url('/assets/images/p1.png')] before:block after:content[''] after:absolute after:top-[0px] after:left-[500px] after:h-[832px] after:w-[940px] after:bg-[url('/assets/images/p2d.png')] after:block">
-                            <h1 className='text-right text-[140px] font-bold leading-[169px] relative z-50'>React</h1>
-                            <h1 className='text-right text-[140px] font-bold leading-[169px] relative z-50'>Conference</h1>
+                            <h1 className='text-right text-[120px] font-bold leading-[169px] relative z-50 md:mr-[20px]'>React</h1>
+                            <h1 className='text-right text-[120px] font-bold leading-[169px] relative z-50 md:mr-[20px]'>Conference</h1>
                         </div>
                         <div className="flex clear-both gap-x-[50px]">
-                            <div className="w-[50%] relative after:content[''] after:absolute after:bottom-[-50px] after:right-[-100px] after:h-[200px] after:w-[200px] after:bg-[url('/assets/images/p8d.png')] after:block after:bg-no-repeat">
+                            <div className="w-[60%] relative after:content[''] after:absolute after:bottom-[-50px] after:right-[-100px] after:h-[200px] after:w-[200px] after:bg-[url('/assets/images/p8d.png')] after:block after:bg-no-repeat">
                                 <div className="h-[420px] w-[330px] block float-right mt-[20px] relative z-[10]">
                                     <Image src="/assets/images/p6.png" alt="logo" layout="fill" />
                                 </div>
@@ -68,10 +68,10 @@ export default function heroSection() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-[50%] flex justify-center items-center">
-                        <div className="flex">
+                    <div className="w-[40%] flex justify-center items-center">
+                        <div className="">
                             <div className="z-[60] ml-[-100px] relative after:content[''] after:absolute after:bottom-[-90px] after:left-[-20px] after:h-[130px] after:w-[100px] after:bg-[url('/assets/images/p4.png')] after:block after:bg-no-repeat after:z-10">
-                                <div className="h-[550px] w-[560px] block m-auto mt-[20px] relative">
+                                <div className="h-[550px] w-[460px] block m-auto mt-[20px] relative">
                                     <Image src="/assets/images/h3.png" alt="logo" layout="fill" />
                                 </div>
                             </div>
