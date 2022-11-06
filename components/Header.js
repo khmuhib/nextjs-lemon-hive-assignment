@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 function MobileNav({ open, setOpen }) {
     return (
-        <div className={`absolute top-0 left-0 h-screen w-screen bg-white transform ${open ? "-translate-y-0" : "-translate-y-full"} transition-transform duration-300 ease-in-out filter  z-[50]`}>
+        <div className={`absolute top-0 left-0 h-screen w-screen bg-white transform ${open ? "-translate-y-0" : "-translate-y-full"} transition-transform duration-300 ease-in-out filter  z-[100]`}>
 
             <div className="flex flex-col justify-center items-center mt-28">
                 <a className="text-2xl font-bold text-red-500 my-4" href="#" >
